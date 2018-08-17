@@ -2,12 +2,18 @@
  * Created by HuangXiaoFeng on 2018-08-08 0008.
  */
 
+import { combineReducers }  from 'redux'
 import { ADD_LIST_ITEM, REMOVE_LIST_ITEM, CHANGE_INPUT_VALUE, INIT_TODO_LIST } from './actionTypes'
 
 const defaultState = {
     inputValue: '',
     listArr: []
 };
+
+// 可以根据组件来分解reducer, 引入模块后合并到这个大的里面导出
+/*export default combineReducers({
+
+});*/
 
 // component发送dispatch给store后，store调用此方法，将就的state和页面传过来的action传递进来
 export default (state = defaultState, action) => {
